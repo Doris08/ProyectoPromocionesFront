@@ -113,11 +113,11 @@ export default {
       this.disabled = true;
       try {
         let data = {
-          username: this.user,
+          email: this.user,
           password: this.password,
         };
         this.clearMenu();
-        let response = await this.http_client("/api/login_check", data, "post");
+        let response = await this.http_client("/api/v1/login", data, "post");
         if (response.status === 200) {
           this.error = false;
           this.error_message = null;
