@@ -21,6 +21,17 @@
        <v-card rounded="lg">
         <v-card-title class="mb-3">Listado de avisos</v-card-title>
         <v-card-text>
+            <v-flex text-xs-right>
+                <v-btn
+                        color="primary"
+                        dark
+                        class="mb-2"
+                        v-bind="attrs"
+                        v-on="on"
+                    >
+                        Nuevo Aviso
+                </v-btn>
+            </v-flex>
          <template>
             <v-card>
               <v-card-title>
@@ -38,7 +49,8 @@
                 :headers="headers"
                 :items="avisos"
                 :search="search"
-              ></v-data-table>
+              >
+              </v-data-table>
             </v-card>
             </template>
         </v-card-text>
@@ -78,6 +90,7 @@ export default {
         value: "descripcion",
       },
       { text: "Estado", value: "activo", sortable: false, width: "100" },
+      { text: 'Aciones', value: 'actions', sortable: false },
     ],
 
   }),
